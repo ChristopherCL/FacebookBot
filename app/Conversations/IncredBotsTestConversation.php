@@ -6,14 +6,17 @@ use BotMan\BotMan\Messages\Incoming\Answer;
 use BotMan\BotMan\Messages\Outgoing\Question;
 use BotMan\BotMan\Messages\Outgoing\Actions\Button;
 use BotMan\BotMan\Messages\Conversations\Conversation;
+use BotMan\BotMan\Users\User;
 
 class IncredBotsTestConversation extends Conversation
 {
+    /** @var User*/
     protected $userData;
 
+    /** @var int */
     protected $userAge;
 
-    public function run()
+    public function run() : void
     {
         $this->startConversation();
     }
@@ -41,6 +44,7 @@ class IncredBotsTestConversation extends Conversation
             }
         });
     }
+
 
     public function confirmUserYearOfBirthBasedOnUserAge(int $userAge) : void
     {
